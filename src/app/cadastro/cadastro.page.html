@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Novo Filme</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="stacked">Nome </ion-label>
+        <ion-input [(ngModel)]="filme.Nome" placeholder="Senhor dos Anéis"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Gênero</ion-label>
+        <ion-select [(ngModel)]="filme.genero" placeholder="Escolha">
+        <ion-select-option *ngFor="let genero of generos" [value]="genero">{{genero.descricao}}
+        </ion-select-option>
+        </ion-select>
+      </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Duração </ion-label>
+            <ion-range color="primary" pin="true"></ion-range>
+          </ion-item>
+      <button color="danger" (click)="cancelar()">Cancelar</button>
+      <button color="sucess" (click)="gravar()">Gravar</button>
+</ion-content>
